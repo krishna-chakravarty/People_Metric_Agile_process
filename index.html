@@ -1,0 +1,237 @@
+<html>
+
+<head>
+    <style>
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #49a09d, #000000);
+            font-family: sans-serif;
+            font-weight: 100;
+
+        }
+
+        button{
+            height:20px;
+            width:100px;
+            margin: -20px -50px;
+            position:relative;
+            top: 80%;
+            left:49%;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        th,
+        td {
+            padding: 7px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        thead {
+            background-color: #55608f;
+        }
+
+
+    </style>
+
+    <script>
+
+        function isNaN(x) {
+        return x !== x;
+        };
+
+
+        function calculate()
+        {
+            var res = 0.0;
+            var resRow = 0.0;
+            for(let i=1;i<document.getElementById('table').rows.length-1;i++)
+            {
+                if(!isNaN(parseFloat(document.getElementById("input"+i).value)
+                                                                * parseFloat(document.getElementById("weight"+i).innerText)))
+                 resRow = parseFloat(document.getElementById("input"+i).value)
+                                                                * parseFloat(document.getElementById("weight"+i).innerText);
+
+                document.getElementById("score"+i).innerHTML = resRow.toFixed(2);
+                res = res + parseFloat(document.getElementById("input"+i).value) 
+                                                                * parseFloat(document.getElementById("weight"+i).innerText);
+
+
+            }
+
+
+            if(!isNaN(res))
+            {
+                res=res.toFixed(2);
+                document.getElementById("scorex").innerHTML = res;
+
+            }
+
+            if(parseFloat(document.getElementById("scorex").innerText) < 60)
+                document.getElementById("scorex").style.backgroundColor = "red";
+
+            if(parseFloat(document.getElementById("scorex").innerText) >75)
+                document.getElementById("scorex").style.backgroundColor = "green";
+
+
+            if(parseFloat(document.getElementById("scorex").innerText) < 75 && parseFloat(document.getElementById("scorex").innerText) > 60)
+            {
+                document.getElementById("scorex").style.backgroundColor = "Orange";
+
+            }
+
+            if(parseFloat(document.getElementById("scorex").innerText) ==75 )
+            {
+                document.getElementById("scorex").style.backgroundColor = "green";
+
+            }
+
+            if(parseFloat(document.getElementById("scorex").innerText) ==60 )
+            {
+                document.getElementById("scorex").style.backgroundColor = "Orange";
+
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+<style>
+    h1 {text-align: center; font-family: sans-serif; font-size: 30; color: azure; padding-top: 10}
+
+
+</style>
+<h1>KNOW YOUR TEAM</h1>
+
+<div class="container">
+    <table id = "table">
+        <thead>
+
+        <tr>
+            <th>People Factors</th>
+            <th>Weightage</th>
+            <th>Enter value (10)</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Autonomy</td>
+            <td id = "weight1">0.6046</td>
+            <td><input type="text" placeholder="0-10" id="input1"/></td>
+            <td id = "score1">.........</td>
+        </tr>
+        <tr>
+            <td>Client Involvement</td>
+            <td id = "weight2">0.8293</td>
+            <td><input type="text" placeholder="0-10" id="input2"/></td>
+            <td id = "score2">.........</td>
+        </tr>
+
+        <tr>
+            <td>Collaboration</td>
+            <td id = "weight3">1.343</td>
+            <td><input type="text" placeholder="0-10" id="input3"/></td>
+            <td id = "score3">.........</td>
+        </tr>
+
+        <tr>
+            <td>Communication</td>
+            <td id = "weight4">1.6907</td>
+            <td><input type="text" placeholder="0-10" id="input4"/></td>
+            <td id = "score4">.........</td>
+        </tr>
+
+        <tr>
+        <td>Cultural Aspects</td>
+        <td id = "weight5">0.2408</td>
+        <td><input type="text" placeholder="0-10" id="input5"/></td>
+        <td id = "score5">.........</td>
+        </tr>
+
+        <tr>
+            <td>Experience</td>
+            <td id = "weight6">0.9524</td>
+            <td><input type="text" placeholder="0-10" id="input6"/></td>
+            <td id = "score6">.........</td>
+        </tr>
+
+        <tr>
+            <td>Knowledge</td>
+            <td id = "weight7">0.8507</td>
+            <td><input type="text" placeholder="0-10" id="input7"/></td>
+            <td id = "score7">.........</td>
+        </tr>
+
+        <tr>
+            <td>Leadership</td>
+            <td id = "weight8">0.9256</td>
+            <td><input type="text" placeholder="0-10" id="input8"/></td>
+            <td id = "score8">.........</td>
+        </tr>
+
+        <tr>
+            <td>Learning</td>
+            <td id = "weight9">0.4227</td>
+            <td><input type="text" placeholder="0-10" id="input9"/></td>
+            <td id = "score9">.........</td>
+        </tr>
+
+        <tr>
+            <td>Motivation</td>
+            <td id = "weight10">0.8828</td>
+            <td><input type="text" placeholder="0-10" id="input10"/></td>
+            <td id = "score10">.........</td>
+        </tr>
+        <tr>
+            <td>Trust</td>
+            <td id = "weight11">0.9363</td>
+            <td><input type="text" placeholder="0-10" id="input11"/></td>
+            <td id = "score11">.........</td>
+        </tr>
+
+        <tr>
+            <td>Wellness</td>
+            <td id = "weight12">0.3211</td>
+            <td><input type="text" placeholder="0-10" id="input12"/></td>
+            <td id = "score12">.........</td>
+        </tr>
+
+        <tr>
+            <td colspan="1"  > <i> Calculate your final score </i>
+                <button id="calculate" onclick="calculate()">Calculate</button>
+            </td>
+            <td colspan="2" style="text-align: center; vertical-align: middle;">FINAL SCORE</td>
+            <td id = "scorex">.........</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+
+</html>
