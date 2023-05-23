@@ -88,6 +88,7 @@
                 document.getElementById("scorex").innerHTML = res;
 
                 localStorage.setItem("ScoreValue", res);
+                document.getElementById("Check").disabled= false   ;
 
             }
 
@@ -236,7 +237,7 @@
     <table bgcolor="black">
         <tr bgcolor="black">
             <td colspan="3"  bgcolor="black" > Interpret your score and check suggestions here
-                <button id="Check" style = background-color:skyblue   onclick="window.location.href='Suggestion.html'">SUGGEST</button>
+                <button id="Check" disabled="true" type='button' style = background-color:skyblue   onclick="window.location.href='Suggestion.html'">SUGGEST</button>
 
             </td>
 
