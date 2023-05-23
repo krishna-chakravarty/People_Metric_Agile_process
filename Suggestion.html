@@ -1,0 +1,167 @@
+<html>
+
+<head>
+
+
+    <style>
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: darkslategray;
+            font-family: sans-serif;
+            font-weight: 100;
+
+        }
+
+        button{
+            height:20px;
+            width:100px;
+            margin: -20px -50px;
+            position:relative;
+            top: 80%;
+            left:49%;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table {
+            width: 800px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        th,
+        td {
+            padding: 7px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        thead {
+            background-color: #55608f;
+        }
+
+
+    </style>
+    <script>
+        window.onload = function() {
+            // Get the value from localStorage
+            var value = localStorage.getItem("ScoreValue");
+
+
+        };
+    </script>
+
+
+</head>
+<body >
+<style>
+    h1 {text-align: center; font-family: sans-serif; font-size: 23; color: azure; padding-top: 10; padding-bottom: 5}
+
+
+</style>
+<h1>SUGGESTION FOR YOUR TEAM</h1>
+
+
+
+<div class="container">
+    <table id = "table">
+        <thead>
+
+        <tr>
+            <th colspan="4" > Agile Manifesto : people over processes </th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+               <tr>
+            <td colspan="2"  > <i> Your FINAL SCORE is </i>
+
+            </td>
+
+                   <td colspan="2" id = "scoreF">........</td>
+                   <script>
+                       var ColorScore = localStorage.getItem("ScoreValue");
+                       document.getElementById("scoreF").innerHTML = localStorage.getItem("ScoreValue");
+                       if (ColorScore < 60)
+                           document.getElementById("scoreF").style.backgroundColor = "Red";
+                       else if (ColorScore > 75)
+                           document.getElementById("scoreF").style.backgroundColor = "Green";
+                       else
+                           document.getElementById("scoreF").style.backgroundColor = "Orange";
+
+                   </script>
+
+        </tr>
+               <tr>
+                   <td colspan="4"  id = "Suggestion"> <i> ..... </i>
+                       <script>
+                           var FinalScore = localStorage.getItem("ScoreValue");
+                           if (FinalScore < 60) {
+                               document.getElementById("Suggestion").innerHTML = "Your team has obtained Low Score on People Metric!\n <br> " +
+                                   "Identify the low values which is impacting the total score in a big way (high weight metrics).<br>"+
+                                   "The most important factors your should look into are <br>"+
+                                   "1) Collaboration <br>"+
+                                   "2) Communication <br>"+
+                                   "3) Experience <br>"+
+                                   "4) Knowledge <br>"+
+                                   "5) Trust <br>" +
+                                   "As scrum master may think of replacing some\n" +
+                                   "of the team members with more knowledgeable, well\n" +
+                                   "skilled, motivated and active good team players. This\n" +
+                                   "kind of score needs some major changes in the team\n" +
+                                   "as well as the leadership. Scrum master needs to\n" +
+                                   "investigate the issues and challenges of the project in depth \n" +
+                                   "Instead of start working in the  next sprint, it is very important to bring the change \n" +
+                                   "in the team first, otherwise the project may suffer in \n" +
+                                   "every aspects like quality , schedule and cost.";
+                           }
+                           else if (FinalScore > 75)
+                           {
+                               document.getElementById("Suggestion").innerHTML = "Your team has obtained High Score on People Metric!\n <br> " +
+                               "Congratulations | <br> " +
+                               "You have a well bonded and motivated team to drive the project. All the best for your success !<br> " +
+                                   "Keep Motivating!";
+
+                           }
+                           else {
+                               document.getElementById("Suggestion").innerHTML = "Your team has obtained Average Score on People Metric!\n <br> "+
+                               "Identify the low values which is impacting the total score in a big way (high weight metrics).<br>"+
+                               "The most important factors your should look into are <br>"+
+                               "1) Collaboration <br>"+
+                               "2) Communication <br>"+
+                               "3) Experience <br>"+
+                               "4) Knowledge <br>"+
+                               "5) Trust <br>" +
+                                   "Improve Collaboration : use different collaborative tool, increase brainstorming sessions, build inclusive teams with a range of talents, skill levels, and backgrounds (personal and professional) <br>" +
+                                   "Improve Communication : Define roles and goals in the begining, partcipate in sprint retro-inspection meeting. <br>" +
+                                   "Improve Trust : Make transparent decisions, educate your stakeholders!"
+                           }
+                       </script>
+
+                   </td>
+
+               </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
