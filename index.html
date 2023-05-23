@@ -1,6 +1,7 @@
 <html>
 
 <head>
+
     <style>
         body {
             height: 100%;
@@ -58,7 +59,7 @@
     <script>
 
         function isNaN(x) {
-        return x !== x;
+            return x !== x;
         };
 
 
@@ -69,13 +70,13 @@
             for(let i=1;i<document.getElementById('table').rows.length-1;i++)
             {
                 if(!isNaN(parseFloat(document.getElementById("input"+i).value)
-                                                                * parseFloat(document.getElementById("weight"+i).innerText)))
-                 resRow = parseFloat(document.getElementById("input"+i).value)
-                                                                * parseFloat(document.getElementById("weight"+i).innerText);
+                    * parseFloat(document.getElementById("weight"+i).innerText)))
+                    resRow = parseFloat(document.getElementById("input"+i).value)
+                        * parseFloat(document.getElementById("weight"+i).innerText);
 
                 document.getElementById("score"+i).innerHTML = resRow.toFixed(2);
-                res = res + parseFloat(document.getElementById("input"+i).value) 
-                                                                * parseFloat(document.getElementById("weight"+i).innerText);
+                res = res + parseFloat(document.getElementById("input"+i).value)
+                    * parseFloat(document.getElementById("weight"+i).innerText);
 
 
             }
@@ -85,6 +86,8 @@
             {
                 res=res.toFixed(2);
                 document.getElementById("scorex").innerHTML = res;
+
+                localStorage.setItem("ScoreValue", res);
 
             }
 
@@ -119,7 +122,7 @@
 </head>
 <body>
 <style>
-    h1 {text-align: center; font-family: sans-serif; font-size: 30; color: azure; padding-top: 10}
+    h1 {text-align: center; font-family: sans-serif; font-size: 23; color: azure; padding-top: 10; padding-bottom: 5}
 
 
 </style>
@@ -165,10 +168,10 @@
         </tr>
 
         <tr>
-        <td>Cultural Aspects</td>
-        <td id = "weight5">0.2408</td>
-        <td><input type="text" placeholder="0-10" id="input5"/></td>
-        <td id = "score5">.........</td>
+            <td>Cultural Aspects</td>
+            <td id = "weight5">0.2408</td>
+            <td><input type="text" placeholder="0-10" id="input5"/></td>
+            <td id = "score5">.........</td>
         </tr>
 
         <tr>
@@ -229,6 +232,15 @@
 
         </tbody>
 
+    </table>
+    <table bgcolor="black">
+        <tr bgcolor="black">
+            <td colspan="3"  bgcolor="black" > Interpret your score and check suggestions here
+                <button id="Check" style = background-color:skyblue   onclick="window.location.href='Suggestion.html'">SUGGEST</button>
+
+            </td>
+
+        </tr>
     </table>
 </div>
 
