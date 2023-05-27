@@ -69,6 +69,10 @@
             var resRow = 0.0;
             for(let i=1;i<document.getElementById('table').rows.length-1;i++)
             {
+                (document.getElementById("input"+i).style.backgroundColor ="white");
+            }
+            for(let i=1;i<document.getElementById('table').rows.length-1;i++)
+            {
                 if (document.getElementById("input"+i).value > 10)
                 {
                     alert("Check again, max value in each field can be 10.");
