@@ -69,6 +69,11 @@
             var resRow = 0.0;
             for(let i=1;i<document.getElementById('table').rows.length-1;i++)
             {
+                if (document.getElementById("input"+i).value > 10)
+                {
+                    alert("Check again, max value in each field can be 10.");
+                    return;
+                }
                 if(!isNaN(parseFloat(document.getElementById("input"+i).value)
                     * parseFloat(document.getElementById("weight"+i).innerText)))
                     resRow = parseFloat(document.getElementById("input"+i).value)
