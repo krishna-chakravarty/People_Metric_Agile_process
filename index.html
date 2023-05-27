@@ -72,6 +72,7 @@
                 if (document.getElementById("input"+i).value > 10)
                 {
                     alert("Check again, max value in each field can be 10.");
+                    (document.getElementById("input"+i).style.backgroundColor ="red");
                     return;
                 }
                 if(!isNaN(parseFloat(document.getElementById("input"+i).value)
